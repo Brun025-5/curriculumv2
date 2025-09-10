@@ -8,7 +8,7 @@ export const ContactSection = () => {
   const body = 'Hola, vi tu página personal y me gustaría contactarte para...';
 
   return (
-    <section id="contact" className="w-full flex flex-col items-center justify-center h-screen bg-light-100 dark:bg-gray-900">
+    <section id="contact" className="w-full flex flex-col items-center justify-center h-screen bg-gray-200 dark:bg-gray-900">
 
       <h2 className="text-5xl font-bold">Contact me</h2>
       <div className="grid grid-cols-3">
