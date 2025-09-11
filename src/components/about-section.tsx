@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import ProfileImage from '../../public/images/Me.png'
+import ProfileImage from '@/assets/images/Me.png'
 
 
 export const AboutSection = () => {
