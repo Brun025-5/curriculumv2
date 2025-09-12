@@ -6,7 +6,7 @@ import Autoplay from "embla-carousel-autoplay";
 import Image from 'next/image'
 import RefImage1 from '@/assets/images/Alex Otero.jpg'
 import RefImage2 from '@/assets/images/Jaren Pazmiño.png'
-import RefImage3 from '@/assets/images/David Sandoval.jpg'
+import RefImage3 from '@/assets/images/David Sandoval.png'
 import { useState, useRef, useCallback, useEffect } from "react";
 
 function useMediaQuery(query: string) {
@@ -121,7 +121,7 @@ export const ReferencesSection = () => {
                   </div>
                 </CardContent>
                 <CardFooter>
-                  <p className="text-sm text-gray-500">“Siempre cumple con su labor y es un excelente compañero de equipo.”</p>
+                  <p className="text-sm text-gray-500 text-center">“Siempre cumple con su labor y es un excelente compañero de equipo.”</p>
                 </CardFooter>
               </Card>
             </div>
