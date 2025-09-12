@@ -4,8 +4,26 @@ import { Carousel, CarouselApi, CarouselContent, CarouselItem, CarouselNext, Car
 import { Card, CardContent, CardHeader, CardDescription, CardTitle, CardFooter } from "@/components/ui/card"
 import Autoplay from "embla-carousel-autoplay";
 import Image from 'next/image'
-import ProfileImage from '@/assets/images/Me.png'
+import RefImage1 from '@/assets/images/Alex Otero.jpg'
+import RefImage2 from '@/assets/images/Jaren Pazmiño.png'
+import RefImage3 from '@/assets/images/David Sandoval.jpg'
 import { useState, useRef, useCallback, useEffect } from "react";
+
+function useMediaQuery(query: string) {
+  const [matches, setMatches] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia(query);
+    if (media.matches !== matches) {
+      setMatches(media.matches);
+    }
+    const listener = () => setMatches(media.matches);
+    window.addEventListener("resize", listener);
+    return () => window.removeEventListener("resize", listener);
+  }, [matches, query]);
+
+  return matches;
+}
 
 export const ReferencesSection = () => {
 
@@ -19,7 +37,6 @@ export const ReferencesSection = () => {
     api?.plugins().autoplay?.play();
   }, [api]);
 
-  // Esta función se llamará con CUALQUIER interacción
   const handleInteraction = useCallback(() => {
     api?.plugins().autoplay?.stop();
 
@@ -29,7 +46,7 @@ export const ReferencesSection = () => {
 
     timeoutRef.current = setTimeout(() => {
       startAutoplay();
-    }, 25000); // 30 segundos
+    }, 25000);
   }, [api, startAutoplay]);
 
   useEffect(() => {
@@ -37,8 +54,6 @@ export const ReferencesSection = () => {
       return;
     }
 
-    // Estos listeners capturan TODAS las interacciones,
-    // incluyendo los clics en las flechas.
     api.on("select", handleInteraction);
     api.on("pointerDown", handleInteraction);
 
@@ -51,10 +66,10 @@ export const ReferencesSection = () => {
     };
   }, [api, handleInteraction]);
 
-
+  const isDesktop = useMediaQuery("(min-width: 1024px)");
 
   return (
-    <section id="references" className="w-full flex flex-col items-center justify-center h-fit text-center bg-light-100 dark:bg-gray-800">
+    <section id="references" className="w-full flex flex-col items-center justify-center h-fit py-20 text-center bg-light-100 dark:bg-gray-800">
       <div>
         <h2 className="text-5xl font-bold">References</h2>
         <p className="mt-4 text-xl text-gray-600 dark:text-gray-300">
@@ -62,7 +77,8 @@ export const ReferencesSection = () => {
         </p>
       </div>
       <Carousel opts={{
-        loop: true,
+        loop: false,
+        slidesToScroll: isDesktop ? 2 : 1,
       }}
         plugins={[
           Autoplay({
@@ -70,20 +86,20 @@ export const ReferencesSection = () => {
           }),
         ]}
         setApi={setApi}
-        className="w-2/3"
+        className="w-3/4 lg:w-200"
       >
         <CarouselContent className="items-center">
-          <CarouselItem className="basis-1/2">
+          <CarouselItem className="lg:basis-1/2">
             <div className="p-1">
               <Card>
                 <CardHeader>
                   <CardTitle>Alex Otero</CardTitle>
                   <CardDescription>Taws Member - Computer Sciences Student</CardDescription>
                 </CardHeader>
-                <CardContent className="flex aspect-square items-center justify-center p-6">
-                  <div className='w-lg h-lg md:w-md md:h-md'>
-                    <Image src={ProfileImage} alt="Me" className='rounded-full' />
-                </div>
+                <CardContent className="flex items-center justify-center">
+                  <div className='flex w-80 lg:w-md items-center justify-center'>
+                    <Image src={RefImage1} alt="Alex Otero" className='rounded-full' />
+                  </div>
                 </CardContent>
                 <CardFooter>
                   <p className="text-sm text-gray-500">“Bruno es excelente en capacitar e incentivar al aprendizaje al equipo. Es confiable con los trabajos a realizar y los cumple de manera impecable.”</p>
@@ -92,15 +108,17 @@ export const ReferencesSection = () => {
             </div>
           </CarouselItem>
 
-          <CarouselItem className="basis-1/2">
+          <CarouselItem className="lg:basis-1/2">
             <div className="p-1">
               <Card>
                 <CardHeader>
                   <CardTitle>Jaren Pazmiño</CardTitle>
                   <CardDescription>CIAP President - Computer Sciences Student</CardDescription>
                 </CardHeader>
-                <CardContent className="flex aspect-square items-center justify-center p-6">
-                  <span className="text-4xl font-semibold">photo</span>
+                <CardContent className="flex items-center justify-center">
+                  <div className='flex w-80 lg:w-md items-center justify-center'>
+                    <Image src={RefImage2} alt="Jaren Pazmiño" className='rounded-full' />
+                  </div>
                 </CardContent>
                 <CardFooter>
                   <p className="text-sm text-gray-500">“Siempre cumple con su labor y es un excelente compañero de equipo.”</p>
@@ -109,15 +127,17 @@ export const ReferencesSection = () => {
             </div>
           </CarouselItem>
 
-          <CarouselItem className="basis-1/2">
+          <CarouselItem className="lg:basis-1/2">
             <div className="p-1">
               <Card>
                 <CardHeader>
                   <CardTitle>David Sandoval</CardTitle>
                   <CardDescription>CIAP Member - Computer Sciences Student</CardDescription>
                 </CardHeader>
-                <CardContent className="flex aspect-square items-center justify-center p-6">
-                  <span className="text-4xl font-semibold">photo</span>
+                <CardContent className="flex items-center justify-center">
+                  <div className='flex w-80 lg:w-md items-center justify-center'>
+                    <Image src={RefImage3} alt="David Sandoval" className='rounded-full' />
+                  </div>
                 </CardContent>
                 <CardFooter>
                   <p className="text-sm text-gray-500">“Bruno es un gran compañero de trabajo. Cumple con su trabajo de manera eficiente y excelente.”</p>
@@ -126,8 +146,8 @@ export const ReferencesSection = () => {
             </div>
           </CarouselItem>
         </CarouselContent>
-        <CarouselPrevious />
-        <CarouselNext />
+        <CarouselPrevious className="hidden lg:block" />
+        <CarouselNext className="hidden lg:block" />
       </Carousel>
     </section>
   );

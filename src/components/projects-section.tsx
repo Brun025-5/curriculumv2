@@ -1,6 +1,6 @@
 export const ProjectsSection = () => {
   return (
-    <section id="projects" className="w-full flex items-center justify-center h-screen text-center bg-gray-200 dark:bg-gray-900">
+    <section id="projects" className="w-full flex items-center justify-center h-fit py-20 text-center bg-gray-200 dark:bg-gray-900">
       <div>
         <h2 className="text-5xl font-bold">Projects</h2>
         <p className="mt-4 text-xl text-gray-600 dark:text-gray-300">
