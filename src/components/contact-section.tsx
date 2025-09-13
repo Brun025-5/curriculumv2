@@ -11,8 +11,10 @@ export const ContactSection = () => {
     <section id="contact" className="w-full flex flex-col items-center justify-center h-fit py-20 bg-gray-200 dark:bg-gray-900">
 
       <h2 className="text-5xl font-bold">Contact me</h2>
-      <div className="grid grid-rows-2 lg:grid-cols-3">
-        <form className="grid grid-rows-4 lg:col-span-2">
+      <div className="w-full grid grid-rows-2 lg:grid-cols-3 lg:grid-rows-1">
+
+        <form className="flex flex-col lg:col-span-2">
+
           <div className="grid grid-cols-2">
             <div>
               <p>Your name *</p>
@@ -37,10 +39,11 @@ export const ContactSection = () => {
 
           <div>
             <p>Message *</p>
-            <textarea className="w-full" defaultValue="Enter here" />
+            <textarea className="w-full resize-none" defaultValue="Enter here" />
           </div>
 
-          <button type="submit">Send Message</button>
+          <button className="h-full w-3/4 self-center" type="submit">Send Message</button>
+
         </form>
 
         <section className="grid grid-rows-3">
@@ -83,14 +86,14 @@ export const ContactSection = () => {
           </div>
 
           <div className="bg-gray-950">
-            <h3>Follow me!</h3>
+            <h3 className="text-white">Follow me!</h3>
             <div className="flex flex-columns">
               <a href="https://github.com/Brun025-5" aria-label="GitHub">
-                <GithubIcon className="w-8 h-8 fill-current" />
+                <GithubIcon className="w-8 h-8 fill-current text-white" />
               </a>
 
               <a href="https://www.linkedin.com/in/bruno-romero-yagual" aria-label="Linkedin">
-                <LinkedinIcon className="w-8 h-8 fill-current" />
+                <LinkedinIcon className="w-8 h-8 fill-current text-white" />
               </a>
 
             </div>
