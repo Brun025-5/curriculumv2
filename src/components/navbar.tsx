@@ -1,6 +1,6 @@
 export const Navbar = () => {
   return (
-    <header className="w-full p-3 bg-gray-900 text-white">
+    <header className="w-full p-3 bg-gray-950 text-white">
       <nav className="container mx-auto flex justify-between items-center">
         <a href="/" className="font-bold text-lg">Bruno Romero</a>
         <div className="hidden lg:block space-x-10">
