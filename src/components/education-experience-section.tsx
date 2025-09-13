@@ -2,7 +2,7 @@ import { GraduationCap, Briefcase } from "lucide-react";
 
 export const EducationExperienceSection = () => {
   return (
-    <section id="education-experience" className="w-full grid grid-cols-2 items-center justify-center h-fit py-20 bg-light-100 dark:bg-gray-800">
+    <section id="education-experience" className="w-full grid lg:grid-cols-2 lg:grid-rows-1 grid-rows-2 items-center justify-center h-fit py-20 bg-light-100 dark:bg-gray-800">
 
       <section>
 

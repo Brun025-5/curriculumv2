@@ -5,8 +5,8 @@ import ProfileImage from '@/assets/images/Me.png'
 export const AboutSection = () => {
     return (
         <section id="about" className="w-full flex items-center justify-center h-fit py-20 text-center bg-gray-200 dark:bg-gray-900">
-            <div className="flex flex-columns items-center justify-between space-x-10 px-15" >
-                <div className='w-lg h-lg md:w-md md:h-md'>
+            <div className="flex flex-col lg:flex-row lg:space-x-10 items-center justify-between" >
+                <div className='flex w-80 lg:w-md items-center justify-center'>
                     <Image src={ProfileImage} alt="Me" className='rounded-full' />
                 </div>
                 <div>

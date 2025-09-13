@@ -86,7 +86,7 @@ export const ReferencesSection = () => {
           }),
         ]}
         setApi={setApi}
-        className="w-3/4 lg:w-200"
+        className="w-3/4 md:w-1/2 lg:w-200"
       >
         <CarouselContent className="items-center">
           <CarouselItem className="lg:basis-1/2">
