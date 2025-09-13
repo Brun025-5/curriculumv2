@@ -1,4 +1,4 @@
-import DavidSandoval from "@/assets/images/David Sandoval.jpg";
+import DavidSandoval from "@/assets/images/David Sandoval.png";
 import AlexOtero from "@/assets/images/Alex Otero.jpg";
 import JarenPazmino from "@/assets/images/Jaren Pazmiño.png";
 
