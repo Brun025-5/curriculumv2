@@ -120,3 +120,11 @@
     @apply bg-background text-foreground;
   }
 }
+
+.accordion-borde-especial {
+  --border:oklch(0.205 0 0); /* Color para tema claro */
+}
+
+.dark .accordion-borde-especial {
+  --border: oklch(0.922 0 0); /* Color para tema oscuro */
+}

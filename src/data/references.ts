@@ -1,6 +1,6 @@
-import DavidSandoval from "@/assets/images/David Sandoval.png";
-import AlexOtero from "@/assets/images/Alex Otero.jpg";
-import JarenPazmino from "@/assets/images/Jaren Pazmiño.png";
+import DavidSandoval from "@/assets/images/david-sandoval.png";
+import AlexOtero from "@/assets/images/alex-otero.jpg";
+import JarenPazmino from "@/assets/images/jaren-pazmiño.png";
 
 export const references = [
     {

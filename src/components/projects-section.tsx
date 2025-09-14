@@ -3,7 +3,9 @@ import Link from "next/link";
 import { Button } from "./ui/button";
 import { projects } from "@/data/projects";
 import Image from 'next/image'
-import { ExternalLink, Github } from "lucide-react";
+import { ExternalLink } from "lucide-react";
+import { GithubIcon } from "./icons/Icons";
+import { cn } from "@/lib/utils";
 
 export const ProjectsSection = () => {
   return (
@@ -14,7 +16,7 @@ export const ProjectsSection = () => {
       <Accordion
         type="single"
         collapsible
-        className="w-full px-10 md:px-30 lg:px-50"
+        className={cn("w-full px-10 md:px-30 lg:px-50", "accordion-borde-especial")}
         defaultValue="item-1"
       >
         {projects.map((project) => (
@@ -55,12 +57,13 @@ export const ProjectsSection = () => {
                   <div className="flex gap-4 mt-4">
                     <Button asChild>
                       <Link href={project.liveLink} target="_blank">
-                        <ExternalLink className="mr-2 h-4 w-4" /> Ver Demo
+                        <ExternalLink /> 
+                        <p>Live Demo</p>
                       </Link>
                     </Button>
                     <Button asChild variant="outline">
                       <Link href={project.githubLink} target="_blank">
-                        <Github className="mr-2 h-4 w-4" /> Código Fuente
+                        <GithubIcon className="mr-2 h-4 w-4" /> Source Code
                       </Link>
                     </Button>
                   </div>
