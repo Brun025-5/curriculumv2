@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { Menu, Meh, Smile, FolderOpen, Folder, BookOpen, Album, Mail, MailOpen, User, Users } from "lucide-react";
 import { Button } from "./ui/button";
 import { DropdownMenu, DropdownMenuContent, DropdownMenuGroup, DropdownMenuItem, DropdownMenuLabel, DropdownMenuSeparator, DropdownMenuShortcut, DropdownMenuTrigger, } from "./ui/dropdown-menu";
+import Link from "next/link";
 
 export const Navbar = () => {
 
@@ -23,11 +24,17 @@ export const Navbar = () => {
     <header className="w-full p-3 bg-gray-950 text-white">
       <nav className="container mx-auto flex justify-between items-center">
         <a href="/" className="font-bold text-lg">Bruno Romero</a>
-        <div className="hidden lg:block space-x-10">
-          <a href="#about" className="hover:underline">About</a>
-          <a href="#projects" className="hover:underline">Projects</a>
-          <a href="#education-experience" className="hover:underline">Education & Experience</a>
-          <a href="#references" className="hover:underline">References</a>
+        <div className="hidden lg:block space-x-9">
+          <Button variant={"ghost"} className="cursor-pointer p-0 h-fit">
+            <a href="#about" className="w-full px-4 py-2">About</a>
+          </Button>
+          <Button variant={"ghost"} className="cursor-pointer p-0 h-fit">
+            <a href="#projects" className="w-full px-4 py-2">Projects</a>
+          </Button><Button variant={"ghost"} className="cursor-pointer p-0 h-fit">
+            <a href="#education-experience" className="w-full px-4 py-2">Education & Experience</a>
+          </Button><Button variant={"ghost"} className="cursor-pointer p-0 h-fit">
+            <a href="#references" className="w-full px-4 py-2">References</a>
+          </Button>
         </div>
         <a href="#contact" className="rounded bg-white text-black hidden lg:inline-block py-2 px-4 text-lg font-bold">Contact me</a>
         <div className="lg:hidden">
